@@ -1,9 +1,28 @@
-var URL = window.location.hostname + window.location.pathname;
-console.log(URL);
+//console.log($('h1'));
+//chrome.runtime.sendMessage({action: 'get_info'}, function(res) {
+//    chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+//        if( request.message === 'add_information') {
+//            console.log('hmmmmmmm');
+//            console.log(request.object);
+//        }
+//    });
+//});
+//
+$(document).ready(function(){
+    chrome.tabs.getSelected(null, function(tab){
+        console.log(tab);
+        console.log(tab.url);
+        document.getElementById('keyword-1').innerHTML = 'dogs';
+    });
+}
+);
 
-$.post(
-    'https://apiv2.indico.io/keywords?key=80d27da1ef84a0e43229a30692747ada&version=2',
-    JSON.stringify({
-        'data': "Some call the the the sunshine it the sunshine state"
-    })
-).then(function(res) { console.log(res) });
+
+
+
+//chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+//    if( request.message === 'add_information') {
+//        console.log('hmmmmmmm');
+//        console.log(request.object);
+//    }
+//});

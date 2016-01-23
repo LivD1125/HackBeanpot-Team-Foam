@@ -17,15 +17,12 @@
     "http://*/*",
     "https://*/*"
   ],
-  "background": {
-    "scripts": ["background.js"]
-  },
   "content_scripts": [
     {
       "matches": [
         "<all_urls>"
       ],
-      "js": ["jquery-2.2.0.min.js", "link.js", "popup.js"]
+      "js": ["jquery-2.2.0.min.js"]
     }
   ]
 }
