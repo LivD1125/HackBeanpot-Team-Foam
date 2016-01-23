@@ -4,7 +4,7 @@ from flask import Flask, request, session, g, redirect, url_for, \
 	 abort, render_template, flash
 from contextlib import closing
 from flask.ext.cors import CORS
-import json;
+import json
 from sentimentanalysis import SentimentAnalysis
 
 # configuration
@@ -26,10 +26,8 @@ def index(name=None):
 		print url;
 		#flash('Successfully downloaded!', 'success')
 		#sa = new SentimentAnalysis(url);
-		dataDict = {'sentiment' : 0.56,
-					'tags' : ['Free', 'open-source', 'corporations'],
-					'persons' : ['stallman', 'linus']}
-		jsonDict = json.dumps(dataDict)
+		#		'persons' : ['stallman', 'linus']}
+		#jsonDict = json.dumps(dataDict)
 		status = 0;
 		#data, status = sa.getData()
 		if status == 0:
