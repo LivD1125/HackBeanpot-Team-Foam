@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
-  "version": "1.0",
+  "name": "Foam",
+  "description": "This extension summarizes articles with information about keywords and sentiments",
+  "version": "0.1",
 
   "browser_action": {
     "default_icon": "icon.png",
