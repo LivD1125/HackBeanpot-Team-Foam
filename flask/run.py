@@ -20,18 +20,16 @@ app.config.from_object(__name__)
 
 @app.route('/', methods=['GET', 'POST'])		
 def index(name=None):
-	#return 'Hello World!'
 	if request.method == 'POST':
 		url = request.form.get('url')
-		print url;
-		#flash('Successfully downloaded!', 'success')
+		print "url: ", url
+		
 		sa = SentimentAnalysis(url);
 		jsonDict, status = sa.get_json()
+		
 		if status == 0:
 			print('Successfully Parsed!')
-			#print(jsonDict)
-			#return render_template('show_entries.html', data=jsonDict)
-			return jsonDict#jsonify(**dataDict)
+			return jsonDict
 		else:
 			print('Error in API Parsing!')
 			return render_template('show_entries.html')
@@ -39,5 +37,4 @@ def index(name=None):
 		return render_template('show_entries.html', name=name)
 
 if __name__ == '__main__':
-	#app.run(host='0.0.0.0')
 	app.run(host = '0.0.0.0', port=5000, debug=True)
