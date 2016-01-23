@@ -10,7 +10,7 @@
     <h1> Hello World!</h1>
   {% endif %}
   </div>
-  {% for message in get_flashed_messages() %}
+  {% for message in get_flashed_messages(True) %}
     <div class=flash>{{ message }}</div>
   {% endfor %}
   {% block body %}{% endblock %}
