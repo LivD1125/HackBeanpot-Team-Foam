@@ -14,7 +14,7 @@ class SentimentAnalysis(object):
 
     def parse_data(self):
         encoding_format = 'ascii'
-        print count, "Scraping started for URL ", self.url.encode(encoding_format,'ignore')
+        print "Scraping started for URL ", self.url.encode(encoding_format,'ignore')
 
         opener = urllib2.build_opener()
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 5.1; rv:10.0.1) Gecko/20100101 Firefox/10.0.1'}
@@ -36,16 +36,26 @@ class SentimentAnalysis(object):
     def word_count(self):
         self.count = len(re.findall(r'\w+', self.data))
         self.read_avg = count / 225
-        final_json['avg_time'] = read_avg
+        self.final_json['avg_time'] = read_avg
 
     def keywords(self):
         words = indicoio.keywords(self.data, top_n = 5, version=2)
-        final_json['keywords'] = words
+        self.final_json['keywords'] = words
+
     def named_entities(self):
         properNouns = indicoio.named_entities(self.data)
-        final_json['properNouns'] = properNouns
+        self.final_json['properNouns'] = properNouns
+
     def sentiment(self):
         sentiment = indicoio.sentiment(self.data)
-        final_json['sentiment'] = sentiment
+        self.final_json['sentiment'] = sentiment
+
     def get_json(self):
-        json_data = json.dumps(final_json)
+        self.parse_data();
+        self.word_count();
+        self.keywords();
+        self.named_entities();
+        self.sentiment();
+
+        json_data = json.dumps(self.final_json)
+        return json_data, 0

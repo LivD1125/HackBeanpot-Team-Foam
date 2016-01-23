@@ -25,10 +25,11 @@ def index(name=None):
 		url = request.form.get('url')
 		print url;
 		#flash('Successfully downloaded!', 'success')
-		#sa = new SentimentAnalysis(url);
+		sa = SentimentAnalysis(url);
+		jsonDict, status = sa.get_json()
 		#		'persons' : ['stallman', 'linus']}
 		#jsonDict = json.dumps(dataDict)
-		status = 0;
+		#status = 0;
 		#data, status = sa.getData()
 		if status == 0:
 			print('Successfully Parsed!')
@@ -39,8 +40,8 @@ def index(name=None):
 			return render_template('show_entries.html')
 		#flash(url)
 		#return redirect(url_for('download'))		
-	#else:
-	#	return render_template('show_entries.html', name=name)
+	else:
+		return render_template('show_entries.html', name=name)
 
 if __name__ == '__main__':
 	#app.run(host='0.0.0.0')
