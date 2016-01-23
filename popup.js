@@ -88,6 +88,7 @@ function getImageUrl(searchTerm, callback, errorCallback) {
     x.send();
 }
 
+
 function renderStatus(statusText) {
     document.getElementById('status').textContent = statusText;
 }
