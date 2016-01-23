@@ -4,6 +4,8 @@ from flask import Flask, request, session, g, redirect, url_for, \
 	 abort, render_template, flash
 from contextlib import closing
 from flask.ext.cors import CORS
+import json;
+from sentimentanalysis import SentimentAnalysis
 
 # configuration
 DEBUG = True
@@ -23,11 +25,24 @@ def index(name=None):
 		url = request.form.get('url')
 		print url;
 		#flash('Successfully downloaded!', 'success')
-		flash(url)
-		#return redirect(url_for('download'))
-		return render_template('show_entries.html', name=url)
-	else:
-		return render_template('show_entries.html', name=name)
+		#sa = new SentimentAnalysis(url);
+		dataDict = {'sentiment' : 0.56,
+					'tags' : ['Free', 'open-source', 'corporations'],
+					'persons' : ['stallman', 'linus']}
+		jsonDict = json.dumps(dataDict)
+		status = 0;
+		#data, status = sa.getData()
+		if status == 0:
+			print('Successfully Parsed!')
+			print(jsonDict)
+			return render_template('show_entries.html', data=jsonDict)
+		else:
+			print('Error in API Parsing!')
+			return render_template('show_entries.html')
+		#flash(url)
+		#return redirect(url_for('download'))		
+	#else:
+	#	return render_template('show_entries.html', name=name)
 
 if __name__ == '__main__':
 	#app.run(host='0.0.0.0')

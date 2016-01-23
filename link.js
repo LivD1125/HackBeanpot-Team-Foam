@@ -6,7 +6,7 @@ xmlhttp.onreadystatechange = function() {
 	alert('inside link.js onreadystatechange')
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         alert('Finished downloading ' + document.title);
-        document.getElementById("sentiment").innerHTML=URL;
+        //document.getElementById("sentiment").innerHTML=URL;
         //document.getElementById("keyword-1").innerHTML=URL;
     } else if (xmlhttp.readyState == 4) {
         alert('Something went wrong: ' + xmlhttp.status);
