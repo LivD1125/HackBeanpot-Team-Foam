@@ -6,32 +6,24 @@
  -->
 <html>
 <head>
-    <title>Getting Started Extension's Popup</title>
-    <style>
-        body {
-            font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-            font-size: 100%;
-        }
-        #status {
-            /* avoid an excessively wide status text */
-            white-space: pre;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            max-width: 400px;
-        }
-    </style>
-
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-     -->
+    <title>Skim the Foam</title>
     <script src="popup.js"></script>
 </head>
 <body>
-<div id="status"></div>
-<img id="image-result" hidden>
+    <div id="keywords">
+        <ul>
+            <li id="keyword-1"></li>
+            <li id="keyword-2"></li>
+            <li id="keyword-3"></li>
+        </ul>
+    </div>
+    <div id="read-time">
+        <p></p>
+    </div>
+    <div id="sentiment">
+        <p></p>
+    </div>
+
 </body>
 </html>
 
