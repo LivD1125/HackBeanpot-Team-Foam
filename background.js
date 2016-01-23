@@ -1,4 +1,14 @@
-/* background.js */
+///* background.js */
+//chrome.browserAction.onClicked.addListener(function(tab) {
+//    console.log('does anything happen');
+//    document.getElementById("keyword-2").innerHTML = "hello";
+//    chrome.tabs.executeScript(tab.id, {file: "link.js"});
+//});
+
 chrome.browserAction.onClicked.addListener(function(tab) {
-    chrome.tabs.executeScript(tab.id, {file: "link.js"});
+    // Send a message to the active tab
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        var activeTab = tabs[0];
+        chrome.tabs.sendMessage(activeTab.id, {"message": "clicked_browser_action"});
+    });
 });
