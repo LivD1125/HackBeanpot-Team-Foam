@@ -27,19 +27,14 @@ def index(name=None):
 		#flash('Successfully downloaded!', 'success')
 		sa = SentimentAnalysis(url);
 		jsonDict, status = sa.get_json()
-		#		'persons' : ['stallman', 'linus']}
-		#jsonDict = json.dumps(dataDict)
-		#status = 0;
-		#data, status = sa.getData()
 		if status == 0:
 			print('Successfully Parsed!')
-			print(jsonDict)
-			return render_template('show_entries.html', data=jsonDict)
+			#print(jsonDict)
+			#return render_template('show_entries.html', data=jsonDict)
+			return jsonDict#jsonify(**dataDict)
 		else:
 			print('Error in API Parsing!')
 			return render_template('show_entries.html')
-		#flash(url)
-		#return redirect(url_for('download'))		
 	else:
 		return render_template('show_entries.html', name=name)
 

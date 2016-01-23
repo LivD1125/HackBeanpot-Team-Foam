@@ -6,7 +6,12 @@ $(document).ready(function(){
         $.post(
 			    'http://0.0.0.0:5000/',
 			    {'url': tab.url}
-			    ).then(function(result){console.log(result)});
+			    ).then(function(result){
+			    	//console.log(result);
+			    	document.getElementById('keyword-1').innerHTML = result;
+			    	//document.getElementById('keyword-1').innerHTML = 'dogs';
+			    	alert(result);
+			    });
 
     });
 }

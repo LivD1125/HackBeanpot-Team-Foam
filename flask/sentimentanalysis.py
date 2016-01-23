@@ -6,25 +6,26 @@ import json
 import indicoio
 
 class SentimentAnalysis(object):
-    indicoio.config.api_key = 'ac77d1c220266970c98f8f'
+    indicoio.config.api_key = '037314d08f03395813f6b66d05aebe06'
     def __init__(self, url):
         self.url = url
         self.data = ""
         self.final_json = {}
 
     def parse_data(self):
-        encoding_format = 'ascii'
-        print "Scraping started for URL ", self.url.encode(encoding_format,'ignore')
+        #encoding_format = 'ascii'
+        #print "Scraping started for URL ", self.url.encode(encoding_format,'ignore')
 
         opener = urllib2.build_opener()
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 5.1; rv:10.0.1) Gecko/20100101 Firefox/10.0.1'}
         opener.addheaders = headers.items()
         response = opener.open(self.url)
         html = response.read()
-        self.soup = BeautifulSoup(html)
+        soup = BeautifulSoup(html)
 
         text_list = [''.join(s.findAll(text=True)) for s in soup.find_all('p')]
-        body_text = '.'.join(text_list).encode(encoding_format, 'ignore')
+        #body_text = '.'.join(text_list).encode(encoding_format, 'ignore')
+        body_text = '.'.join(text_list)#.encode('ignore')
         
         # if there is table,fetch table text
         # if soup.find("table") is None:
@@ -34,8 +35,8 @@ class SentimentAnalysis(object):
         self.data = body_text
 
     def word_count(self):
-        self.count = len(re.findall(r'\w+', self.data))
-        self.read_avg = count / 225
+        count = len(re.findall(r'\w+', self.data))
+        read_avg = count / 225
         self.final_json['avg_time'] = read_avg
 
     def keywords(self):
