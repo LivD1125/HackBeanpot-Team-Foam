@@ -1,21 +1,26 @@
 $(document).ready(function(){
     chrome.tabs.getSelected(null, function(tab){
         console.log(tab);
-        console.log(tab.url);
+       // console.log(tab.url);
         //document.getElementById('keyword-1').innerHTML = 'dogs';
         $.post(
 			    'http://0.0.0.0:5000/',
 			    {'url': tab.url}
 			    ).then(function(result){
-			    	console.log(result);
-			    	var minutes = 10;
-			    	var attitude = .83;
-			    	var topics = ["Bernie Sanders", "Hillary Clinton", "Democratic", "Election"];
+			    	//console.log(result);
+			    	var obj = jQuery.parseJSON(result);
+			    	console.log(obj);
+			    	var minutes = obj.avg_time; //avg_time
+			    	var attitude = obj.sentiment; //sentiment
+			    	var topics = obj.keywords; //keywords
+			    	//var topics = ["Bernie Sanders", "Hillary Clinton", "Democratic", "Election"];
 			    	var percentageEl = document.getElementById('percentage');
 			        var imageEl = document.getElementById('picture');
-
+			        
+			        if (minutes >= 60) {
+			        	var hours = 60 % ;
 			    	document.getElementById('time').innerHTML = minutes;
-
+			    	}
 			    	if (attitude > .5){
 			    		percentageEl.className= "positive";
 			    		imageEl.src = "pos.png";
