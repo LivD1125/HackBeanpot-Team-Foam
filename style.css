@@ -4,8 +4,9 @@
   right:0;
   background-color: #ffe2b2;
   position: fixed; 
-  font-style: sans-serif;
-  font-weight: thin;
+  font-style: normal;
+  font-weight: 300;
+  font:"proxima-nova";
   color:#BF9368;
 }
 
@@ -22,41 +23,47 @@
 }
 
 
-#read-time {
+#time {
 	background-color: #ffe2b2;
-	margin-left:0;
+	left:0;
 	right:0;
 	margin-top: 3em;
-	font-style: sans-serif;
-  	font-weight: thin;
+	font-style: normal;
+  	font-weight: 300;
+  	font:"proxima-nova";
   	font-size: 2em;
-}
-#read-time p{
-	float:right;
+  	
 }
 
-#writer {
-	font-size: 1em;
-	font-weight: thin;
-	font-family: sans-serif;
-}
+
+h1{
+	font-style: normal;
+  	font-weight: 300;
+  	font:"proxima-nova";
+  }
 
 #container {
     width: 300px;
     margin: auto;
 }
 #emoticon {
-    width: 35%;
+    width: 40%;
     float: left;
     height: 10em;
 }
 #sentiment {
-    width: 60%;
+	padding-left: 3%;
+    width: 55%;
     float: left;
     height: 10em;
+    right: 0;
 }
 #words {
+	margin-top: 0;
 	font-size: 1.5em;
+	font-style: normal;
+  	font-weight: 300;
+  	font:"proxima-nova";
 }
 
 #percentage {
@@ -78,10 +85,13 @@
 	margin-top: 5em;
 }
 
+}
+
 #keywords {
-	font-size: 2em;
-	font-weight: thin;
-	font-family: sans-serif;
+	font-style: normal;
+  	font-weight: 300;
+  	font:"proxima-nova";
+  	font-size: 2em;
 }
 
 body{

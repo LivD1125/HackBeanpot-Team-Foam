@@ -14,7 +14,7 @@ $(document).ready(function(){
 			    	var percentageEl = document.getElementById('percentage');
 			        var imageEl = document.getElementById('picture');
 
-			    	document.getElementById('time').innerHTML = minutes;
+			    	document.getElementById('time').innerHTML = minutes + " minute read";
 
 			    	if (attitude > .5){
 			    		percentageEl.className= "positive";
@@ -29,7 +29,7 @@ $(document).ready(function(){
 			    	var topicsList = "";
 			    	for (var x=0; x < Math.min(5, topics.length); x++){
 			    		if (x!=0){
-			    		 topicsList += "-"
+			    		 topicsList += " - "
 			    		}
 			    		topicsList += topics[x];
 			    	}
