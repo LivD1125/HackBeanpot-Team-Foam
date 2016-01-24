@@ -16,17 +16,12 @@ $(document).ready(function(){
 			    	//var topics = ["Bernie Sanders", "Hillary Clinton", "Democratic", "Election"];
 			    	var percentageEl = document.getElementById('percentage');
 			        var imageEl = document.getElementById('picture');
-<<<<<<< HEAD
 
 			    	document.getElementById('time').innerHTML = minutes + " minute read";
 
-=======
-			        
-			        if (minutes >= 60) {
-			        	var hours = 60 % ;
-			    	document.getElementById('time').innerHTML = minutes;
 			    	}
->>>>>>> origin/master
+
+
 			    	if (attitude > .5){
 			    		percentageEl.className= "positive";
 			    		imageEl.src = "pos.png";
