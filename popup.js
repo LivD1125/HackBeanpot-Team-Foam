@@ -15,11 +15,20 @@ $(document).ready(function(){
 			    	var topics = obj.keywords; //keywords
 			    	var percentageEl = document.getElementById('percentage');
 			        var imageEl = document.getElementById('picture');
+			        var minutesEl = document.getElementById('time');
+			        var hours = 0;
+			        //minutesEl.innerHTML = minutes + " minute read";
+			        console.log(minutes);
 
-			    	document.getElementById('time').innerHTML = minutes + " minute read";
-
-
-
+			        
+			        if (minutes > 59){
+			        	hours = Math.round(minutes/60);
+			        	minutes = minutes % 60;
+			        	minutesEl.innerHTML = hours + "hour" + minutes + " minute read";
+			        }
+			        else {
+			        	minutesEl.innerHTML = minutes + " minute read";
+			        }
 			    	if (attitude > .5){
 			    		percentageEl.className= "positive";
 			    		imageEl.src = "pos.png";

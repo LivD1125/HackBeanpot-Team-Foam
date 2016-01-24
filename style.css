@@ -38,7 +38,7 @@
 
 h1{
 	font-style: normal;
-  	font-weight: 300;
+  	font-weight: 400;
   	font:"proxima-nova";
   }
 
@@ -47,33 +47,48 @@ h1{
     margin: auto;
 }
 #emoticon {
-    width: 40%;
+    width: 120px;
     float: left;
     height: 10em;
+
 }
 #sentiment {
 	padding-left: 3%;
     width: 55%;
-    float: left;
+    float: right;
     height: 10em;
     right: 0;
 }
+
+
+#percentage {
+	display: inline-block;
+	font-size: 3em;
+	width: 50%;
+	height: 50px;
+}
 #words {
+	display: inline-block;
 	margin-top: 0;
+	padding-top: 0;
 	font-size: 1.5em;
 	font-style: normal;
   	font-weight: 300;
   	font:"proxima-nova";
 }
 
-#percentage {
-	font-size: 2em;
-}
-
 #keywords {
 	background-color: #ffe2b2;
-	margin-right: 0;
-	margin-left: 0;
+	right: 0;
+	left: 0;
+	position: fixed;
+	font-style: normal;
+  	font-weight: 300;
+  	font:"proxima-nova";
+  	font-size: 1.5em;
+  	padding:.5em;
+
+  
 
 }
 
@@ -85,19 +100,11 @@ h1{
 	margin-top: 5em;
 }
 
-}
-
-#keywords {
-	font-style: normal;
-  	font-weight: 300;
-  	font:"proxima-nova";
-  	font-size: 2em;
-}
 
 body{
 	background-color: #ffeed0;
 	width: 300px;
-	height: 500px;
+	height: 400px;
 	
 }
 
