@@ -34,7 +34,7 @@ def index(name=None):
 			print('Error in API Parsing!')
 			return render_template('show_entries.html')
 	else:
-		return render_template('show_entries.html', name=name)
+		return render_template('show_entries.html')
 
 if __name__ == '__main__':
 	app.run(host = '0.0.0.0', port=5000, debug=True)
