@@ -43,16 +43,19 @@ h1{
   }
 
 #container {
+	border: 1px solid blue;
     width: 300px;
     margin: auto;
 }
 #emoticon {
+	border: 1px solid green;
     width: 120px;
     float: left;
     height: 10em;
 
 }
 #sentiment {
+	border: 1px solid red;
 	padding-left: 3%;
     width: 55%;
     float: right;
@@ -62,6 +65,7 @@ h1{
 
 
 #percentage {
+	border: 1px solid yellow;
 	display: inline-block;
 	font-size: 3em;
 	width: 50%;
@@ -87,9 +91,6 @@ h1{
   	font:"proxima-nova";
   	font-size: 1.5em;
   	padding:.5em;
-
-  
-
 }
 
 #clear {

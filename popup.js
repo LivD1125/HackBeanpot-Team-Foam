@@ -42,9 +42,9 @@ $(document).ready(function(){
 			    	var topicsList = "";
 			    	for (var x=0; x < Math.min(5, topics.length); x++){
 			    		if (x!=0){
-			    		 topicsList += " - "
+			    		 topicsList += "<span class='dash'> - </span>"
 			    		}
-			    		topicsList += topics[x];
+			    		topicsList += "<span id='keyword-" + x + "'>" + topics[x] + "</span>";
 			    	}
 			    	document.getElementById('keywords').innerHTML = topicsList;
 			    	//alert(result);
