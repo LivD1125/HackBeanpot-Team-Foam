@@ -17,10 +17,8 @@ $(document).ready(function(){
 			    	var percentageEl = document.getElementById('percentage');
 			        var imageEl = document.getElementById('picture');
 			        
-			        if (minutes >= 60) {
-			        	var hours = 60 % ;
 			    	document.getElementById('time').innerHTML = minutes;
-			    	}
+			    	
 			    	if (attitude > .5){
 			    		percentageEl.className= "positive";
 			    		imageEl.src = "pos.png";
