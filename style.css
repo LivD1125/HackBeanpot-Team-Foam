@@ -59,9 +59,13 @@
 }
 
 #keywords {
-	color: #ffe2b2;
-	margin-rights: 0;
+	background-color: #ffe2b2;
+	margin-right: 0;
 	margin-left: 0;
+}
+
+#clear {
+	clear: both;
 }
 
 body{

@@ -22,7 +22,7 @@ app.config.from_object(__name__)
 def index(name=None):
 	if request.method == 'POST':
 		url = request.form.get('url')
-		print("url: ", url)
+		print "url: ", url
 		
 		sa = SentimentAnalysis(url);
 		jsonDict, status = sa.get_json()
