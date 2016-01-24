@@ -23,11 +23,11 @@ $(document).ready(function(){
 			    	}
 			    	if (attitude > .5){
 			    		percentageEl.className= "positive";
-			    		imageEl.src = "pos.png"
+			    		imageEl.src = "pos.png";
 			    	}
 			    	else {
 			    		percentageEl.className= "negative";
-						imageEl.src = "neg.png"
+						imageEl.src = "neg.png";
 			    	}
 
 			    	percentageEl.innerHTML= Math.round(attitude * 100) + "%";

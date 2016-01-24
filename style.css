@@ -31,6 +31,9 @@
   	font-weight: thin;
   	font-size: 2em;
 }
+#read-time p{
+	float:right;
+}
 
 #writer {
 	font-size: 1em;
@@ -40,7 +43,6 @@
 
 #container {
     width: 300px;
-    background-color: #ffcc33;
     margin: auto;
 }
 #emoticon {
@@ -49,9 +51,12 @@
     height: 10em;
 }
 #sentiment {
-    width: 65%;
+    width: 60%;
     float: left;
     height: 10em;
+}
+#words {
+	font-size: 1.5em;
 }
 
 #percentage {
@@ -59,9 +64,24 @@
 }
 
 #keywords {
-	color: #ffe2b2;
-	margin-rights: 0;
+	background-color: #ffe2b2;
+	margin-right: 0;
 	margin-left: 0;
+
+}
+
+#clear {
+	clear: both;
+}
+
+#ArticleHead {
+	margin-top: 5em;
+}
+
+#keywords {
+	font-size: 2em;
+	font-weight: thin;
+	font-family: sans-serif;
 }
 
 body{
