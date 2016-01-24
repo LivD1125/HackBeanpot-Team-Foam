@@ -9,22 +9,38 @@
     <title>Skim the Foam</title>
     <script src="jquery-2.2.0.min.js"></script>
     <script src="popup.js"></script>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div id="keywords">
-        <ul>
-            <li id="keyword-1"></li>
-            <li id="keyword-2"></li>
-            <li id="keyword-3"></li>
-        </ul>
-    </div>
-    <div id="read-time">
-        <p></p>
-    </div>
-    <div id="sentiment">
-        <p></p>
+    <div id="Logo">
+      <img src="foamLogo.png" alt="Foam Icon"/>
+      <p id="motto">Machine-educated article abstracts</p>
     </div>
 
+    <div id="read-time">
+        <span id="time"></span>
+        <p>  minute read</p>
+    </div>
+
+    <div id="writer">
+    <h1>Writer's Attitude</h1>
+    </div>
+    <div id="container">
+        <div id="emoticon">
+        <img id="picture" />
+        </div>
+
+        <div id="sentiment">
+            <p id="percentage"></p>
+             <p id="words"> positive perspective </p>
+        </div>
+    </div>
+    <div id="ArticleHead">
+        <h1> Article Topics </h1>
+    </div>
+
+    <div id="keywords">
+    </div>
 </body>
 </html>
 

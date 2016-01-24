@@ -1,0 +1,80 @@
+#Logo{
+  top:0;
+  left:0;
+  right:0;
+  background-color: #ffe2b2;
+  position: fixed; 
+  font-style: sans-serif;
+  font-weight: thin;
+  color:#BF9368;
+}
+
+#Logo img{
+   height: 90%;
+   width:60%;
+   float:left;
+   padding-right: 3%;
+   padding-top: 3%;
+}
+
+#Logo p{
+	padding-top: 3%;
+}
+
+
+#read-time {
+	background-color: #ffe2b2;
+	margin-left:0;
+	right:0;
+	margin-top: 3em;
+	font-style: sans-serif;
+  	font-weight: thin;
+  	font-size: 2em;
+}
+
+#writer {
+	font-size: 1em;
+	font-weight: thin;
+	font-family: sans-serif;
+}
+
+#container {
+    width: 300px;
+    background-color: #ffcc33;
+    margin: auto;
+}
+#emoticon {
+    width: 35%;
+    float: left;
+    height: 10em;
+}
+#sentiment {
+    width: 65%;
+    float: left;
+    height: 10em;
+}
+
+#percentage {
+	font-size: 2em;
+}
+
+#keywords {
+	color: #ffe2b2;
+	margin-rights: 0;
+	margin-left: 0;
+}
+
+body{
+	background-color: #ffeed0;
+	width: 300px;
+	height: 500px;
+	
+}
+
+.positive {
+	color: green;
+}
+
+.negative {
+	color: red;
+}
