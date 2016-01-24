@@ -1,19 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
     <form method=post class=add-entry>
-      <dl>
-        <dt>Title:
-        <dd>
-        <dt>Text:
-        <dd><textarea name=text rows=5 cols=40></textarea>
-        <dd><input type=submit value=Share>
-      </dl>
-      <ul class=data>
-  		{% for entry in data %}
-    	<li><h2>{{ entry.title }}</h2>{{ entry.text|safe }}
-  		{% else %}
-    	<li><em>Unbelievable.  No data here so far</em>
-  		{% endfor %}
-  		</ul>
+    	<em>Machine Educated Article Abstract</em>
     </form>
 {% endblock %}
