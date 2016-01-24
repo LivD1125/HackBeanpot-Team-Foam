@@ -22,7 +22,7 @@ app.config.from_object(__name__)
 def index(name=None):
 	if request.method == 'POST':
 		url = request.form.get('url')
-		print("url: ", url)
+		print "url: ", url
 		
 		sa = SentimentAnalysis(url);
 		jsonDict, status = sa.get_json()
@@ -34,7 +34,7 @@ def index(name=None):
 			print('Error in API Parsing!')
 			return render_template('show_entries.html')
 	else:
-		return render_template('show_entries.html')
+		return render_template('show_entries.html', name=name)
 
 if __name__ == '__main__':
 	app.run(host = '0.0.0.0', port=5000, debug=True)

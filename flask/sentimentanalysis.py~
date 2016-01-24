@@ -28,7 +28,7 @@ class SentimentAnalysis(object):
                 text_list = [''.join(s.findAll(text=True)) for s in soup.find_all('p')]
                 body_text = '.'.join(text_list)
             except urllib2.URLError as e:
-                print("Error: ", e," for URL: ", url)
+                print "Error: ", e," for URL: ", url
                 redo_count += 1
             except:
                 redo_count += 1
@@ -43,23 +43,23 @@ class SentimentAnalysis(object):
     def fetch_word_count(self):
         count = len(re.findall(r'\w+', self.data))
         read_avg = count / 225
-        print("\nread_avg: ", read_avg)
+        print "\nread_avg: ", read_avg
         self.final_json['avg_time'] = read_avg
 
     def fetch_keywords(self):
         words = indicoio.keywords(self.data, top_n = 5, version=2)  
         self.final_json['keywords'] = set(sorted(words, key=words.get, reverse=True)[:5])
-        print("\nwords: ", self.final_json['keywords'])
+        print "\nwords: ", self.final_json['keywords']
 
     def fetch_named_entities(self):
         properNouns = indicoio.named_entities(self.data)
-        print("\nproperNouns: ", properNouns)
+        print "\nproperNouns: ", properNouns
         nounDict = {k:v['confidence'] for k,v in properNouns.items()}
         self.final_json['keywords'].update(sorted(nounDict, key=nounDict.get, reverse=True)[:5])
 
     def fetch_sentiment(self):
         sentiment = indicoio.sentiment(self.data)
-        print("\nsentiment: ", sentiment)
+        print "\nsentiment: ", sentiment
         self.final_json['sentiment'] = sentiment
 
     def get_json(self):
