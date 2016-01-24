@@ -13,13 +13,11 @@ $(document).ready(function(){
 			    	var minutes = obj.avg_time; //avg_time
 			    	var attitude = obj.sentiment; //sentiment
 			    	var topics = obj.keywords; //keywords
-			    	//var topics = ["Bernie Sanders", "Hillary Clinton", "Democratic", "Election"];
 			    	var percentageEl = document.getElementById('percentage');
 			        var imageEl = document.getElementById('picture');
 
 			    	document.getElementById('time').innerHTML = minutes + " minute read";
 
-			    	}
 
 
 			    	if (attitude > .5){
