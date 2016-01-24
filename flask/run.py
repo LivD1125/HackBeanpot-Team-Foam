@@ -6,6 +6,7 @@ from contextlib import closing
 from flask.ext.cors import CORS
 import json
 from sentimentanalysis import SentimentAnalysis
+from wolfram import QueryWolfram
 
 # configuration
 DEBUG = True
@@ -21,18 +22,25 @@ app.config.from_object(__name__)
 @app.route('/', methods=['GET', 'POST'])		
 def index(name=None):
 	if request.method == 'POST':
-		url = request.form.get('url')
-		print("url: ", url)
-		
-		sa = SentimentAnalysis(url);
-		jsonDict, status = sa.get_json()
-		
-		if status == 0:
-			print('Successfully Parsed!')
-			return jsonDict
+		if request.form.get('query'):
+			query = request.form.get('query')
+			print "Querying Wolfram API for query: ", query
+			wolf = QueryWolfram(query)
+			result = wolf.call_wolfram()
+			return result
 		else:
-			print('Error in API Parsing!')
-			return render_template('show_entries.html')
+			url = request.form.get('url')
+			print("url: ", url)
+			
+			sa = SentimentAnalysis(url);
+			jsonDict, status = sa.get_json()
+			
+			if status == 0:
+				print('Successfully Parsed!')
+				return jsonDict
+			else:
+				print('Error in API Parsing!')
+				return render_template('show_entries.html')
 	else:
 		return render_template('show_entries.html')
 
